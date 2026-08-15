@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7f5;
+  color: #222;
+}
+
+button {
+  font-family: inherit;
+}
+
+.halaman {
+  display: none;
+  min-height: 100vh;
+}
+
+.halaman.aktif {
+  display: block;
+}
+
+
+/* =========================
+   MENU UTAMA
+========================= */
+
+#halamanUtama {
+  background: #000;
+  text-align: center;
+}
+
+.gambar-utama {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.petunjuk {
+  color: white;
+  margin: 10px 0 20px;
+  font-size: 14px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.atas {
+  background: #087f3f;
+  color: white;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 10px 55px;
+}
+
+.atas h1 {
+  font-size: 21px;
+  margin: 0;
+  text-align: center;
+}
+
+.back {
+  position: absolute;
+  left: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   GAMBAR KEDUA
+========================= */
+
+.poster {
+  width: 100%;
+  background: white;
+  text-align: center;
+}
+
+.poster img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+
+/* =========================
+   ISI
+========================= */
+
+.isi {
+  width: 94%;
+  max-width: 700px;
+  margin: auto;
+  padding: 15px 0 100px;
+}
+
+.keterangan {
+  background: white;
+  padding: 16px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+
+.keterangan h2 {
+  color: #087f3f;
+  margin: 0 0 8px;
+}
+
+.keterangan p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   PILIH SEMUA
+========================= */
+
+.pilih-semua {
+  background: #e8f7ee;
+  border: 1px solid #a9d9ba;
+  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.pilih-semua label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pilih-semua input {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* =========================
+   BARANG
+========================= */
+
+.barang {
+  background: white;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+
+.barang-header label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.barang-header input {
+  width: 20px;
+  height: 20px;
+}
+
+.harga-satuan {
+  margin-top: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.jumlah {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.jumlah button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #087f3f;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.jumlah button:active {
+  transform: scale(.93);
+}
+
+.jumlah-text {
+  min-width: 145px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.total-barang {
+  text-align: center;
+  margin-top: 12px;
+  color: #087f3f;
+}
+
+
+/* =========================
+   TOTAL STICKY
+========================= */
+
+.total-sticky {
+  position: sticky;
+  bottom: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(0,0,0,.15);
+  margin-top: 15px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.total-row strong {
+  color: #087f3f;
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-hijau {
+  background: #087f3f;
+  color: white;
+}
+
+.btn-orange {
+  background: #ee4d2d;
+  color: white;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+
+/* =========================
+   RINGKASAN
+========================= */
+
+.ringkasan {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+
+.item-ringkasan {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  line-height: 1.6;
+}
+
+.item-ringkasan:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================
+   TOTAL FINAL
+========================= */
+
+.total-final {
+  background: #e8f7ee;
+  border: 2px solid #087f3f;
+  color: #087f3f;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.total-final span {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.total-final strong {
+  display: block;
+  font-size: 26px;
+}
+
+
+/* =========================
+   PEMBAYARAN
+========================= */
+
+.pembayaran {
+  margin-top: 15px;
+}
+
+
+/* =========================
+   SHOPEE
+========================= */
+
+.catatan-shopee {
+  background: #fff4f1;
+  border: 1px solid #ffc7bb;
+  padding: 15px;
+  border-radius: 14px;
+  margin-top: 15px;
+}
+
+.catatan-shopee p {
+  margin-bottom: 0;
+}
+
+.shopee-button {
+  display: block;
+  background: #ee4d2d;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 480px) {
+
+  .atas h1 {
+    font-size: 19px;
+  }
+
+  .jumlah {
+    gap: 10px;
+  }
+
+  .jumlah-text {
+    min-width: 125px;
+    font-size: 14px;
+  }
+
+}
+</style>
+
+  </head>
+    
+  <body>
+  <div id="app">
+
+  <!-- =========================
+       MENU UTAMA
+  ========================== -->
+
+  <section id="halamanUtama" class="halaman aktif">
+
+    <img
+      src="https://i.ibb.co.com/d06x1PFh/file-00000000b9508211beddbed322548d68.png"
+      class="gambar-utama"
+      onclick="bukaSembako()"
+      alt="Menu Utama"
+    >
+
+    <p class="petunjuk">
+      Ketuk gambar untuk mulai
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       HALAMAN PILIH SEMBAKO
+  ========================== -->
+
+  <section id="halamanSembako" class="halaman">
+
+    <div class="atas">
+
+      <button class="back" onclick="kembaliUtama()">
+        ←
+      </button>
+
+      <h1>Pilih Jenis Infaq</h1>
+
+    </div>
+
+
+    <div class="poster">
+
+      <img
+        src="https://i.ibb.co.com/MDN3NWcT/file-0000000048588207ba3f3a404e4b2264.png"
+        alt="Pilihan Sembako"
+      >
+
+    </div>
+
+
+    <div class="isi">
+
+      <div class="keterangan">
+
+        <h2>Pilih Barang</h2>
+
+        <p>
+          Kamu dapat memilih beberapa jenis barang
+          sekaligus.
+        </p>
+
+      </div>
+
+
+      <!-- PILIH SEMUA -->
+
+      <div class="pilih-semua">
+
+        <label>
+
+          <input
+            type="checkbox"
+            id="checkSemua"
+            onchange="pilihSemua()"
+          >
+
+          <strong>Pilih Semua Jenis Barang</strong>
+
+        </label>
+
+      </div>
+
+
+      <!-- DAFTAR BARANG -->
+
+      <div id="daftarBarang"></div>
+
+
+      <!-- TOTAL -->
+
+      <div class="total-sticky">
+
+        <div class="total-row">
+
+          <span>Total Infaq</span>
+
+          <strong id="totalHarga">
+            Rp0
+          </strong>
+
+        </div>
+
+
+        <button
+          class="btn btn-hijau"
+          onclick="lanjutkan()"
+        >
+          Lanjutkan
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HALAMAN PILIHAN
+  ========================== -->
+
+  <section id="halamanPilihan" class="halaman">
+
+    <div class="atas">
+
+      <button class="back" onclick="kembaliSembako()">
+        ←
+      </button>
+
+      <h1>Pilihan Infaq</h1>
+
+    </div>
+
+
+    <div class="isi">
+
+      <div class="keterangan">
+
+        <h2>Rincian Pilihan</h2>
+
+      </div>
+
+
+      <div
+        id="ringkasan"
+        class="ringkasan"
+      ></div>
+
+
+      <div class="total-final">
+
+        <span>Total</span>
+
+        <strong id="totalFinal">
+          Rp0
+        </strong>
+
+      </div>
+
+
+      <button
+        class="btn btn-orange"
+        onclick="beliDanKirim()"
+      >
+        🛒 Beli & Kirim Barang
+      </button>
+
+
+      <button
+        class="btn btn-hijau"
+        onclick="infaqUang()"
+      >
+        💰 Infaq Uang
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HALAMAN INFAQ UANG
+  ========================== -->
+
+  <section id="halamanUang" class="halaman">
+
+    <div class="atas">
+
+      <button class="back" onclick="kembaliPilihan()">
+        ←
+      </button>
+
+      <h1>Infaq Uang</h1>
+
+    </div>
+
+
+    <div class="isi">
+
+      <div class="keterangan">
+
+        <h2>Nominal Infaq</h2>
+
+        <p>
+          Nominal sudah otomatis sesuai
+          dengan barang yang kamu pilih.
+        </p>
+
+      </div>
+
+
+      <div
+        id="ringkasanUang"
+        class="ringkasan"
+      ></div>
+
+
+      <div class="total-final">
+
+        <span>Total yang harus diinfaqkan</span>
+
+        <strong id="totalUang">
+          Rp0
+        </strong>
+
+      </div>
+
+
+      <div class="keterangan pembayaran">
+
+        <h3>Pilih Metode Pembayaran</h3>
+
+        <p>
+          Bagian rekening bank dan e-wallet
+          akan kita masukkan setelah kamu
+          menentukan rekening pembayaran.
+        </p>
+
+      </div>
+
+
+      <button
+        class="btn btn-hijau"
+        onclick="pilihPembayaran()"
+      >
+        💳 Pilih Metode Pembayaran
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HALAMAN BELI & KIRIM
+  ========================== -->
+
+  <section id="halamanBeli" class="halaman">
+
+    <div class="atas">
+
+      <button class="back" onclick="kembaliPilihan()">
+        ←
+      </button>
+
+      <h1>Beli & Kirim</h1>
+
+    </div>
+
+
+    <div class="isi">
+
+      <div class="keterangan">
+
+        <h2>Barang yang Dipilih</h2>
+
+        <p>
+          Berikut jumlah barang yang kamu pilih.
+        </p>
+
+      </div>
+
+
+      <div
+        id="ringkasanBeli"
+        class="ringkasan"
+      ></div>
+
+
+      <div class="catatan-shopee">
+
+        <strong>🛒 Belanja melalui Shopee</strong>
+
+        <p>
+          Tekan tombol barang untuk membuka
+          produk di Shopee.
+        </p>
+
+      </div>
+
+
+      <div id="tombolShopee"></div>
+
+    </div>
+
+  </section>
+
+</div>
+    <script>
+/* =====================================================
+   DATA BARANG
+===================================================== */
+
+const barang = {
+
+  beras: {
+    nama: "Beras",
+    isi: 5,
+    satuan: "kg",
+    harga: 72376,
+    link: "https://s.shopee.co.id/6pzs4jiFnv",
+    jumlah: 0
+  },
+
+  minyak: {
+    nama: "Minyak Goreng",
+    isi: 1,
+    satuan: "L",
+    harga: 23700,
+    link: "https://s.shopee.co.id/AKZkFQg8Ml",
+    jumlah: 0
+  },
+
+  telur: {
+    nama: "Telur",
+    isi: 1,
+    satuan: "tray",
+    harga: 41600,
+    link: "https://s.shopee.co.id/7AciThYIvD",
+    jumlah: 0
+  },
+
+  tepung: {
+    nama: "Tepung",
+    isi: 1,
+    satuan: "kg",
+    harga: 14800,
+    link: "https://s.shopee.co.id/5VUUVcylHH",
+    jumlah: 0
+  },
+
+  kentang: {
+    nama: "Kentang",
+    isi: 1,
+    satuan: "kg",
+    harga: 28800,
+    link: "https://s.shopee.co.id/9KhD4sZlFe",
+    jumlah: 0
+  },
+
+  sapi: {
+    nama: "Daging Sapi",
+    isi: 1,
+    satuan: "ekor",
+    harga: 1900000,
+    link: null,
+    jumlah: 0
+  },
+
+  ayam: {
+    nama: "Ayam",
+    isi: 1,
+    satuan: "ekor",
+    harga: 60000,
+    link: null,
+    jumlah: 0
+  },
+
+  bawangBombai: {
+    nama: "Bawang Bombai",
+    isi: 1,
+    satuan: "kg",
+    harga: 40000,
+    link: "https://s.shopee.co.id/5Are6s7JFs",
+    jumlah: 0
+  },
+
+  bawangPutih: {
+    nama: "Bawang Putih",
+    isi: 1,
+    satuan: "kg",
+    harga: 40000,
+    link: "https://s.shopee.co.id/5Are6s7JFs",
+    jumlah: 0
+  },
+
+  bawangMerah: {
+    nama: "Bawang Merah",
+    isi: 1,
+    satuan: "kg",
+    harga: 40000,
+    link: "https://s.shopee.co.id/5Are6s7JFs",
+    jumlah: 0
+  },
+
+  gulaPasir: {
+    nama: "Gula Pasir",
+    isi: 1,
+    satuan: "kg",
+    harga: 21097,
+    link: "https://s.shopee.co.id/3qMGWtWE1T",
+    jumlah: 0
+  },
+
+  gulaMerah: {
+    nama: "Gula Merah",
+    isi: 1,
+    satuan: "kg",
+    harga: 25999,
+    link: "https://s.shopee.co.id/1LevYulMNV",
+    jumlah: 0
+  },
+
+  cabe: {
+    nama: "Cabe",
+    isi: 1,
+    satuan: "kg",
+    harga: 45896,
+    link: "https://s.shopee.co.id/7AciWJTm0p",
+    jumlah: 0
+  },
+
+  kecap: {
+    nama: "Kecap Manis",
+    isi: 1,
+    satuan: "L",
+    harga: 30069,
+    link: "https://s.shopee.co.id/7psPJb8VBX",
+    jumlah: 0
+  },
+
+  kerupuk: {
+    nama: "Kerupuk",
+    isi: 1,
+    satuan: "bal",
+    harga: 20782,
+    link: "https://s.shopee.co.id/W5oaAD8l3",
+    jumlah: 0
+  }
+
+};
+
+
+/* =====================================================
+   FORMAT RUPIAH
+===================================================== */
+
+function rupiah(angka) {
+
+  return "Rp" + angka.toLocaleString("id-ID");
+
+}
+
+
+/* =====================================================
+   PINDAH HALAMAN
+===================================================== */
+
+function tampilkan(id) {
+
+  document.querySelectorAll(".halaman").forEach(function(el) {
+
+    el.classList.remove("aktif");
+
+  });
+
+  document.getElementById(id).classList.add("aktif");
+
+  window.scrollTo(0, 0);
+
+}
+
+
+/* =====================================================
+   BUKA SEMBAKO
+===================================================== */
+
+function bukaSembako() {
+
+  buatDaftarBarang();
+
+  tampilkan("halamanSembako");
+
+}
+
+
+/* =====================================================
+   BUAT DAFTAR BARANG
+===================================================== */
+
+function buatDaftarBarang() {
+
+  const container =
+    document.getElementById("daftarBarang");
+
+  container.innerHTML = "";
+
+
+  Object.keys(barang).forEach(function(id) {
+
+    const b = barang[id];
+
+
+    container.innerHTML += `
+
+      <div class="barang">
+
+        <div class="barang-header">
+
+          <label>
+
+            <input
+              type="checkbox"
+              id="check-${id}"
+              onchange="ubahCentang('${id}')"
+            >
+
+            <strong>${b.nama}</strong>
+
+          </label>
+
+        </div>
+
+
+        <div class="harga-satuan">
+
+          ${rupiah(b.harga)}
+          / ${b.isi} ${b.satuan}
+
+        </div>
+
+
+        <div class="jumlah">
+
+          <button
+            onclick="kurangi('${id}')"
+          >
+            −
+          </button>
+
+
+          <div
+            class="jumlah-text"
+            id="jumlah-${id}"
+          >
+            0 paket
+          </div>
+
+
+          <button
+            onclick="tambah('${id}')"
+          >
+            +
+          </button>
+
+        </div>
+
+
+        <div
+          class="total-barang"
+          id="total-${id}"
+        >
+          Total: Rp0
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+function ubahCentang(id) {
+
+  const checked =
+    document.getElementById("check-" + id).checked;
+
+
+  if (checked) {
+
+    if (barang[id].jumlah === 0) {
+
+      barang[id].jumlah = 1;
+
+    }
+
+  } else {
+
+    barang[id].jumlah = 0;
+
+  }
+
+
+  tampilkanJumlah(id);
+
+  hitungTotal();
+
+  cekSemua();
+
+}
+
+
+/* =====================================================
+   TAMBAH
+===================================================== */
+
+function tambah(id) {
+
+  barang[id].jumlah++;
+
+  document.getElementById(
+    "check-" + id
+  ).checked = true;
+
+  tampilkanJumlah(id);
+
+  hitungTotal();
+
+  cekSemua();
+
+}
+
+
+/* =====================================================
+   KURANGI
+===================================================== */
+
+function kurangi(id) {
+
+  if (barang[id].jumlah > 0) {
+
+    barang[id].jumlah--;
+
+  }
+
+
+  if (barang[id].jumlah === 0) {
+
+    document.getElementById(
+      "check-" + id
+    ).checked = false;
+
+  }
+
+
+  tampilkanJumlah(id);
+
+  hitungTotal();
+
+  cekSemua();
+
+}
+
+
+/* =====================================================
+   TAMPILKAN JUMLAH
+===================================================== */
+
+function tampilkanJumlah(id) {
+
+  const b = barang[id];
+
+  const jumlahIsi =
+    b.jumlah * b.isi;
+
+
+  document.getElementById(
+    "jumlah-" + id
+  ).innerText =
+
+    b.jumlah +
+    " paket = " +
+    jumlahIsi +
+    " " +
+    b.satuan;
+
+
+  document.getElementById(
+    "total-" + id
+  ).innerText =
+
+    "Total: " +
+    rupiah(b.jumlah * b.harga);
+
+}
+
+
+/* =====================================================
+   PILIH SEMUA
+===================================================== */
+
+function pilihSemua() {
+
+  const semua =
+    document.getElementById("checkSemua").checked;
+
+
+  Object.keys(barang).forEach(function(id) {
+
+    if (semua) {
+
+      barang[id].jumlah = 1;
+
+    } else {
+
+      barang[id].jumlah = 0;
+
+    }
+
+
+    document.getElementById(
+      "check-" + id
+    ).checked = semua;
+
+
+    tampilkanJumlah(id);
+
+  });
+
+
+  hitungTotal();
+
+}
+
+
+/* =====================================================
+   CEK PILIH SEMUA
+===================================================== */
+
+function cekSemua() {
+
+  const ids = Object.keys(barang);
+
+  const semua = ids.every(function(id) {
+
+    return barang[id].jumlah > 0;
+
+  });
+
+
+  document.getElementById(
+    "checkSemua"
+  ).checked = semua;
+
+}
+
+
+/* =====================================================
+   HITUNG TOTAL
+===================================================== */
+
+function hitungTotal() {
+
+  let total = 0;
+
+
+  Object.keys(barang).forEach(function(id) {
+
+    total +=
+      barang[id].harga *
+      barang[id].jumlah;
+
+  });
+
+
+  document.getElementById(
+    "totalHarga"
+  ).innerText = rupiah(total);
+
+
+  return total;
+
+}
+
+
+/* =====================================================
+   BARANG TERPILIH
+===================================================== */
+
+function barangTerpilih() {
+
+  return Object.keys(barang).filter(function(id) {
+
+    return barang[id].jumlah > 0;
+
+  });
+
+}
+
+
+/* =====================================================
+   LANJUTKAN
+===================================================== */
+
+function lanjutkan() {
+
+  const pilihan =
+    barangTerpilih();
+
+
+  if (pilihan.length === 0) {
+
+    alert(
+      "Silakan pilih minimal satu barang."
+    );
+
+    return;
+
+  }
+
+
+  let html = "";
+
+
+  pilihan.forEach(function(id) {
+
+    const b = barang[id];
+
+    html += `
+
+      <div class="item-ringkasan">
+
+        <strong>
+          ${b.nama}
+        </strong>
+
+        <br>
+
+        ${b.jumlah} paket
+        =
+        ${b.jumlah * b.isi}
+        ${b.satuan}
+
+        <br>
+
+        ${rupiah(b.jumlah * b.harga)}
+
+      </div>
+
+    `;
+
+  });
+
+
+  document.getElementById(
+    "ringkasan"
+  ).innerHTML = html;
+
+
+  document.getElementById(
+    "totalFinal"
+  ).innerText =
+    rupiah(hitungTotal());
+
+
+  tampilkan("halamanPilihan");
+
+}
+
+
+/* =====================================================
+   INFAQ UANG
+===================================================== */
+
+function infaqUang() {
+
+  const pilihan =
+    barangTerpilih();
+
+
+  let html = "";
+
+
+  pilihan.forEach(function(id) {
+
+    const b = barang[id];
+
+
+    html += `
+
+      <div class="item-ringkasan">
+
+        <strong>
+          ${b.nama}
+        </strong>
+
+        <br>
+
+        ${b.jumlah} paket
+        =
+        ${b.jumlah * b.isi}
+        ${b.satuan}
+
+        <br>
+
+        Nominal:
+        <strong>
+          ${rupiah(b.jumlah * b.harga)}
+        </strong>
+
+      </div>
+
+    `;
+
+  });
+
+
+  document.getElementById(
+    "ringkasanUang"
+  ).innerHTML = html;
+
+
+  document.getElementById(
+    "totalUang"
+  ).innerText =
+    rupiah(hitungTotal());
+
+
+  tampilkan("halamanUang");
+
+}
+
+
+/* =====================================================
+   BELI DAN KIRIM
+===================================================== */
+
+function beliDanKirim() {
+
+  const pilihan =
+    barangTerpilih();
+
+
+  let html = "";
+
+  let tombol = "";
+
+
+  pilihan.forEach(function(id) {
+
+    const b = barang[id];
+
+
+    html += `
+
+      <div class="item-ringkasan">
+
+        <strong>
+          ${b.nama}
+        </strong>
+
+        <br>
+
+        ${b.jumlah} paket
+        =
+        ${b.jumlah * b.isi}
+        ${b.satuan}
+
+        <br>
+
+        Nilai:
+        ${rupiah(b.jumlah * b.harga)}
+
+      </div>
+
+    `;
+
+
+    if (b.link) {
+
+      tombol += `
+
+        <a
+          href="${b.link}"
+          target="_blank"
+          class="shopee-button"
+        >
+
+          🛒
+          ${b.nama}
+          —
+          Buka Shopee
+
+        </a>
+
+      `;
+
+    } else {
+
+      tombol += `
+
+        <div class="item-ringkasan">
+
+          <strong>
+            ${b.nama}
+          </strong>
+
+          <br>
+
+          Barang ini menggunakan
+          <strong>Infaq Uang</strong>
+          dan tidak melalui Shopee.
+
+        </div>
+
+      `;
+
+    }
+
+  });
+
+
+  document.getElementById(
+    "ringkasanBeli"
+  ).innerHTML = html;
+
+
+  document.getElementById(
+    "tombolShopee"
+  ).innerHTML = tombol;
+
+
+  tampilkan("halamanBeli");
+
+}
+
+
+/* =====================================================
+   NAVIGASI KEMBALI
+===================================================== */
+
+function kembaliUtama() {
+
+  tampilkan("halamanUtama");
+
+}
+
+
+function kembaliSembako() {
+
+  tampilkan("halamanSembako");
+
+}
+
+
+function kembaliPilihan() {
+
+  tampilkan("halamanPilihan");
+
+}
+
+
+/* =====================================================
+   PEMBAYARAN
+===================================================== */
+
+function pilihPembayaran() {
+
+  alert(
+    "Nanti di bagian ini kita masukkan pilihan Bank dan E-Wallet beserta nominal otomatis."
+  );
+
+}
+</script>
+
+  </body>
+  
+</html>
